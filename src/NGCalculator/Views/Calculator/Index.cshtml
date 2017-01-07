@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Kalkulator Angular - Strona Główna";
+}
+
+<div class="jumbotron">
+    <h1>Kalkulator MVC</h1>
+</div>
+
+<div class="row" ng-controller="CalculatorController">
+    <table class="calc-container col-sm-10">
+        <tr>
+            <td colspan="4" class="col-sm-8">
+                <input class="form-control display" id="inputdefault" type="text" ng-model="displayValue" readonly>
+            </td>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-click="onButtonClick('C')">C</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('7')">7</button>
+            </td>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('8')">8</button>
+            </td>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('9')">9</button>
+            </td>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('/')">/</button>
+            </td>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('sqrt')">sqrt</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('4')">4</button>
+            </td>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('5')">5</button>
+            </td>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('6')">6</button>
+            </td>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('*')">*</button>
+            </td>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('%')">%</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('1')">1</button>
+            </td>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('2')">2</button>
+            </td>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('3')">3</button>
+            </td>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('-')">-</button>
+            </td>
+            <td class="col-sm-2" rowspan="2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('=')">=</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('0')">0</button>
+            </td>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('.')">.</button>
+            </td>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('+/-')">+/-</button>
+            </td>
+            <td class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-lg" ng-disabled="disabled" ng-click="onButtonClick('+')">+</button>
+            </td>
+        </tr>
+        <tr ng-if="error">
+            <td colspan="5" class="error-message">
+                {{error}}
+            </td>
+        </tr>
+    </table>
+</div>
